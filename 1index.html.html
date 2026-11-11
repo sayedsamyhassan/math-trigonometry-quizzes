@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الاختبارات التفاعلية – المتطابقات المثلثية</title>
+<style>
+:root{--navy:#12365b;--teal:#087f82;--gold:#d9a441;--pale:#eef5f8;--ink:#172b3a;--green:#198754;--red:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6f8;color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+header{background:linear-gradient(120deg,#12365b,#087f82);color:#fff;padding:28px 18px;text-align:center}
+header h1{margin:0 0 6px;font-size:clamp(22px,4vw,34px)}
+header p{margin:0;color:#e5f3f4}
+.wrap{max-width:980px;margin:22px auto;padding:0 14px 36px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:18px}
+.tab{border:1px solid #cbd7df;background:#fff;color:var(--navy);border-radius:12px;padding:12px 8px;font-weight:bold;cursor:pointer}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.panel{display:none;background:#fff;border-radius:16px;padding:22px;box-shadow:0 5px 22px #18354a12}
+.panel.active{display:block}
+.meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#526777;font-size:14px;border-bottom:1px solid #e5ebef;padding-bottom:12px;margin-bottom:16px}
+.question{border:1px solid #e0e8ed;border-radius:13px;padding:16px;margin:14px 0;background:#fff}
+.question h3{font-size:17px;margin:0 0 12px;color:var(--navy)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.option{display:flex;align-items:center;gap:9px;border:1px solid #d7e1e7;border-radius:10px;padding:10px 12px;cursor:pointer;background:#fbfdfe}
+.option:hover{border-color:var(--teal);background:#f2fbfb}
+.option input{accent-color:var(--teal);transform:scale(1.1)}
+.option.correct{border-color:var(--green);background:#eaf7ef}
+.option.wrong{border-color:var(--red);background:#fff0ef}
+.feedback{display:none;margin-top:10px;padding:10px 12px;border-radius:9px;font-size:14px}
+.feedback.show{display:block}
+.feedback.good{background:#eaf7ef;color:#145c36}
+.feedback.bad{background:#fff0ef;color:#8b241b}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button.action{border:0;border-radius:10px;padding:11px 18px;font-weight:bold;cursor:pointer;font-family:inherit}
+.primary{background:var(--teal);color:#fff}
+.secondary{background:#e8eef2;color:var(--navy)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.result{display:none;margin-top:18px;padding:18px;border-radius:12px;background:#edf5fb;border:1px solid #cbdde9}
+.result.show{display:block}
+.result strong{font-size:22px;color:var(--navy)}
+.progress{height:8px;background:#e6edf1;border-radius:20px;overflow:hidden;margin:8px 0 16px}
+.progress span{display:block;height:100%;background:var(--gold);width:0;transition:width .25s}
+.note{font-size:13px;color:#607381;margin-top:20px;text-align:center}
+@media(max-width:650px){.tabs{grid-template-columns:1fr 1fr}.options{grid-template-columns:1fr}.panel{padding:14px}.question{padding:13px}}
+@media print{body{background:#fff}.tabs,.actions{display:none}.panel{display:block!important;box-shadow:none;page-break-after:always}.feedback{display:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>الاختبارات التفاعلية – المتطابقات المثلثية</h1>
+<p>الصف الثالث الثانوي | أربعة اختبارات مستقلة – خمسة أسئلة لكل اختبار</p>
+</header>
+<main class="wrap">
+<nav class="tabs" aria-label="اختيار الاختبار">
+<button class="tab active" data-target="quiz1">الاختبار الأول</button>
+<button class="tab" data-target="quiz2">الاختبار الثاني</button>
+<button class="tab" data-target="quiz3">الاختبار الثالث</button>
+<button class="tab" data-target="quiz4">الاختبار الرابع</button>
+</nav>
+
+<section class="panel active" id="quiz1">
+<h2>الاختبار الأول: مفهوم المتطابقات المثلثية</h2>
+<div class="meta"><span>الموضوع: الدرس 3-2 – المفاهيم الأساسية</span><span>عدد الأسئلة: 5</span><span>الدرجة: 5</span></div>
+<div class="progress"><span></span></div>
+<div class="questions">
+<div class="question" data-answer="b" data-explain="المتطابقة المثلثية علاقة صحيحة لكل قيم الزاوية التي تكون فيها أطرافها معرفة.">
+<h3>1. أي العبارات الآتية تمثل متطابقة مثلثية؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q1_1" value="a"> sin θ = 1/2</label>
+<label class="option"><input type="radio" name="q1_1" value="b"> sin² θ + cos² θ = 1</label>
+<label class="option"><input type="radio" name="q1_1" value="c"> tan θ = 2</label>
+<label class="option"><input type="radio" name="q1_1" value="d"> cos θ = 0</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="c" data-explain="المتطابقة الأساسية تنص على أن sin² θ + cos² θ = 1.">
+<h3>2. ما ناتج تبسيط sin² θ + cos² θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q1_2" value="a"> 0</label>
+<label class="option"><input type="radio" name="q1_2" value="b"> sin θ</label>
+<label class="option"><input type="radio" name="q1_2" value="c"> 1</label>
+<label class="option"><input type="radio" name="q1_2" value="d"> tan θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="a" data-explain="تعريف الظل هو نسبة الجيب إلى جيب التمام، عندما يكون جيب التمام غير صفر.">
+<h3>3. أي علاقة تمثل tan θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q1_3" value="a"> sin θ / cos θ</label>
+<label class="option"><input type="radio" name="q1_3" value="b"> cos θ / sin θ</label>
+<label class="option"><input type="radio" name="q1_3" value="c"> 1 / sin θ</label>
+<label class="option"><input type="radio" name="q1_3" value="d"> 1 / cos θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="d" data-explain="القاطع sec θ هو مقلوب جيب التمام: sec θ = 1/cos θ.">
+<h3>4. أي علاقة تمثل sec θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q1_4" value="a"> 1 / tan θ</label>
+<label class="option"><input type="radio" name="q1_4" value="b"> 1 / sin θ</label>
+<label class="option"><input type="radio" name="q1_4" value="c"> sin θ / cos θ</label>
+<label class="option"><input type="radio" name="q1_4" value="d"> 1 / cos θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="b" data-explain="إثبات المتطابقة يتم بتحويل أحد الطرفين حتى يصبح مساويًا للطرف الآخر، مع تبرير التحويلات.">
+<h3>5. ما الفكرة الأساسية لإثبات صحة متطابقة مثلثية؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q1_5" value="a"> التعويض بقيمة واحدة للزاوية فقط</label>
+<label class="option"><input type="radio" name="q1_5" value="b"> تحويل أحد الطرفين إلى الطرف الآخر</label>
+<label class="option"><input type="radio" name="q1_5" value="c"> حذف حدود العبارة دون قاعدة</label>
+<label class="option"><input type="radio" name="q1_5" value="d"> استخدام الآلة الحاسبة فقط</label>
+</div><div class="feedback"></div></div>
+</div>
+<div class="actions"><button class="action primary submit">تصحيح الاختبار</button><button class="action secondary reset">إعادة المحاولة</button></div>
+<div class="result" aria-live="polite"></div>
+</section>
+
+<section class="panel" id="quiz2">
+<h2>الاختبار الثاني: استراتيجيات إثبات المتطابقات</h2>
+<div class="meta"><span>الموضوع: الدرس 3-2 – الإثبات والتبسيط</span><span>عدد الأسئلة: 5</span><span>الدرجة: 5</span></div>
+<div class="progress"><span></span></div>
+<div class="questions">
+<div class="question" data-answer="a" data-explain="نبدأ غالبًا بالطرف الأكثر تعقيدًا لأنه يحتاج إلى تحويلات أكثر للوصول إلى الطرف الآخر.">
+<h3>1. عند البدء في إثبات متطابقة، أي طرف يُفضّل البدء به غالبًا؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q2_1" value="a"> الطرف الأكثر تعقيدًا</label>
+<label class="option"><input type="radio" name="q2_1" value="b"> الطرف الأبسط دائمًا</label>
+<label class="option"><input type="radio" name="q2_1" value="c"> الطرف الأيمن فقط</label>
+<label class="option"><input type="radio" name="q2_1" value="d"> لا يجوز اختيار طرف محدد</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="c" data-explain="بما أن tan θ = sin θ/cos θ و cot θ = cos θ/sin θ، فإن حاصل ضربهما يساوي 1.">
+<h3>2. ما ناتج tan θ × cot θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q2_2" value="a"> tan² θ</label>
+<label class="option"><input type="radio" name="q2_2" value="b"> cot² θ</label>
+<label class="option"><input type="radio" name="q2_2" value="c"> 1</label>
+<label class="option"><input type="radio" name="q2_2" value="d"> sin² θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="b" data-explain="من المتطابقة 1 + tan² θ = sec² θ، بطرح tan² θ من الطرفين نحصل على sec² θ − tan² θ = 1.">
+<h3>3. ما قيمة sec² θ − tan² θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q2_3" value="a"> sec θ</label>
+<label class="option"><input type="radio" name="q2_3" value="b"> 1</label>
+<label class="option"><input type="radio" name="q2_3" value="c"> tan² θ</label>
+<label class="option"><input type="radio" name="q2_3" value="d"> 0</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="d" data-explain="المتطابقة 1 + cot² θ = csc² θ، وبالتالي csc² θ − cot² θ = 1.">
+<h3>4. أي ناتج ينتج من المتطابقة 1 + cot² θ = csc² θ ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q2_4" value="a"> csc² θ + cot² θ = 1</label>
+<label class="option"><input type="radio" name="q2_4" value="b"> csc² θ − 1 = 1</label>
+<label class="option"><input type="radio" name="q2_4" value="c"> cot² θ − csc² θ = 1</label>
+<label class="option"><input type="radio" name="q2_4" value="d"> csc² θ − cot² θ = 1</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="a" data-explain="من أساليب الإثبات توحيد المقامات أو تحليل البسط والمقام ثم الاختصار وفق قواعد جبرية صحيحة.">
+<h3>5. أي مما يأتي يُعد أسلوبًا صحيحًا يمكن استخدامه في إثبات المتطابقات؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q2_5" value="a"> توحيد المقامات والتبسيط</label>
+<label class="option"><input type="radio" name="q2_5" value="b"> حذف أي حد متشابه في البسط والمقام دون تحليل</label>
+<label class="option"><input type="radio" name="q2_5" value="c"> تغيير إشارة حد دون سبب</label>
+<label class="option"><input type="radio" name="q2_5" value="d"> اعتبار الطرفين متساويين قبل الإثبات</label>
+</div><div class="feedback"></div></div>
+</div>
+<div class="actions"><button class="action primary submit">تصحيح الاختبار</button><button class="action secondary reset">إعادة المحاولة</button></div>
+<div class="result" aria-live="polite"></div>
+</section>
+
+<section class="panel" id="quiz3">
+<h2>الاختبار الثالث: متطابقات مجموع زاويتين والفرق بينهما</h2>
+<div class="meta"><span>الموضوع: الدرس 3-3 – الصيغ والقيم الدقيقة</span><span>عدد الأسئلة: 5</span><span>الدرجة: 5</span></div>
+<div class="progress"><span></span></div>
+<div class="questions">
+<div class="question" data-answer="b" data-explain="صيغة مجموع زاويتين للجيب هي sin(A+B)=sin A cos B + cos A sin B.">
+<h3>1. ما الصيغة الصحيحة لـ sin(A + B) ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q3_1" value="a"> sin A cos B − cos A sin B</label>
+<label class="option"><input type="radio" name="q3_1" value="b"> sin A cos B + cos A sin B</label>
+<label class="option"><input type="radio" name="q3_1" value="c"> cos A cos B + sin A sin B</label>
+<label class="option"><input type="radio" name="q3_1" value="d"> cos A cos B − sin A sin B</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="d" data-explain="صيغة فرق الزاويتين لجيب التمام هي cos(A−B)=cos A cos B + sin A sin B.">
+<h3>2. ما الصيغة الصحيحة لـ cos(A − B) ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q3_2" value="a"> cos A cos B − sin A sin B</label>
+<label class="option"><input type="radio" name="q3_2" value="b"> sin A cos B + cos A sin B</label>
+<label class="option"><input type="radio" name="q3_2" value="c"> sin A cos B − cos A sin B</label>
+<label class="option"><input type="radio" name="q3_2" value="d"> cos A cos B + sin A sin B</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="a" data-explain="75° = 45° + 30°. وباستخدام صيغة مجموع الجيب نحصل على (√6 + √2)/4.">
+<h3>3. ما القيمة الدقيقة لـ sin 75° ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q3_3" value="a"> (√6 + √2) / 4</label>
+<label class="option"><input type="radio" name="q3_3" value="b"> (√6 − √2) / 4</label>
+<label class="option"><input type="radio" name="q3_3" value="c"> (√3 + 1) / 2</label>
+<label class="option"><input type="radio" name="q3_3" value="d"> √2 / 2</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="c" data-explain="cos 15° = cos(45°−30°) = cos45°cos30° + sin45°sin30° = (√6+√2)/4.">
+<h3>4. ما القيمة الدقيقة لـ cos 15° ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q3_4" value="a"> (√6 − √2) / 4</label>
+<label class="option"><input type="radio" name="q3_4" value="b"> 1/2</label>
+<label class="option"><input type="radio" name="q3_4" value="c"> (√6 + √2) / 4</label>
+<label class="option"><input type="radio" name="q3_4" value="d"> √3 / 2</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="b" data-explain="لإيجاد sin 105° نكتب 105° = 60° + 45° ثم نستخدم متطابقة مجموع الزاويتين للجيب.">
+<h3>5. أي تفكيك مناسب لإيجاد sin 105° باستخدام الزوايا الخاصة؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q3_5" value="a"> 105° = 90° − 15° فقط دون تحويل إضافي</label>
+<label class="option"><input type="radio" name="q3_5" value="b"> 105° = 60° + 45°</label>
+<label class="option"><input type="radio" name="q3_5" value="c"> 105° = 30° − 75°</label>
+<label class="option"><input type="radio" name="q3_5" value="d"> 105° = 45° − 60°</label>
+</div><div class="feedback"></div></div>
+</div>
+<div class="actions"><button class="action primary submit">تصحيح الاختبار</button><button class="action secondary reset">إعادة المحاولة</button></div>
+<div class="result" aria-live="polite"></div>
+</section>
+
+<section class="panel" id="quiz4">
+<h2>الاختبار الرابع: تطبيقات وإثباتات متطابقات المجموع والفرق</h2>
+<div class="meta"><span>الموضوع: الدرس 3-3 – التطبيقات والتحقق</span><span>عدد الأسئلة: 5</span><span>الدرجة: 5</span></div>
+<div class="progress"><span></span></div>
+<div class="questions">
+<div class="question" data-answer="a" data-explain="متطابقة الزاويتين المتتامتين: cos(90°−θ)=sin θ.">
+<h3>1. أي علاقة صحيحة للزاويتين المتتامتين؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q4_1" value="a"> cos(90° − θ) = sin θ</label>
+<label class="option"><input type="radio" name="q4_1" value="b"> cos(90° − θ) = cos θ</label>
+<label class="option"><input type="radio" name="q4_1" value="c"> sin(90° − θ) = sin θ</label>
+<label class="option"><input type="radio" name="q4_1" value="d"> tan(90° − θ) = tan θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="c" data-explain="من متطابقة مجموع الزاويتين: sin(θ+90°)=sinθ·0+cosθ·1=cosθ.">
+<h3>2. ما ناتج sin(θ + 90°) ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q4_2" value="a"> sin θ</label>
+<label class="option"><input type="radio" name="q4_2" value="b"> −sin θ</label>
+<label class="option"><input type="radio" name="q4_2" value="c"> cos θ</label>
+<label class="option"><input type="radio" name="q4_2" value="d"> −cos θ</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="d" data-explain="متطابقة الظل لمجموع زاويتين: tan(A+B)=(tan A+tan B)/(1−tan A tan B)، وعند B=45° يكون tan45°=1.">
+<h3>3. أي صيغة تمثل tan(θ + 45°) ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q4_3" value="a"> (tan θ − 1) / (1 + tan θ)</label>
+<label class="option"><input type="radio" name="q4_3" value="b"> (1 − tan θ) / (1 + tan θ)</label>
+<label class="option"><input type="radio" name="q4_3" value="c"> (tan θ + 1) / (1 + tan θ)</label>
+<label class="option"><input type="radio" name="q4_3" value="d"> (1 + tan θ) / (1 − tan θ)</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="b" data-explain="sin105° = sin(60°+45°) = sin60°cos45° + cos60°sin45° = (√6+√2)/4.">
+<h3>4. ما القيمة الدقيقة لـ sin 105° ؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q4_4" value="a"> (√6 − √2) / 4</label>
+<label class="option"><input type="radio" name="q4_4" value="b"> (√6 + √2) / 4</label>
+<label class="option"><input type="radio" name="q4_4" value="c"> √2 / 2</label>
+<label class="option"><input type="radio" name="q4_4" value="d"> √3 / 2</label>
+</div><div class="feedback"></div></div>
+<div class="question" data-answer="a" data-explain="في مثال التيار المتردد بالكتاب، يعاد كتابة 165°t على صورة 120°t + 45°t لتطبيق متطابقة مجموع الزاويتين، ثم تُستخدم عند التعويض عن الزمن المطلوب.">
+<h3>5. في تطبيق التيار المتردد الوارد بالكتاب، ما الهدف من إعادة كتابة زاوية مثل 165° على صورة مجموع زاويتين؟</h3>
+<div class="options">
+<label class="option"><input type="radio" name="q4_5" value="a"> تطبيق متطابقة مجموع الزاويتين باستخدام قيم معروفة</label>
+<label class="option"><input type="radio" name="q4_5" value="b"> تحويل قياس الزاوية من درجات إلى راديان بالضرورة</label>
+<label class="option"><input type="radio" name="q4_5" value="c"> حذف المتغير من المعادلة</label>
+<label class="option"><input type="radio" name="q4_5" value="d"> استخدام متطابقة فرق الزاويتين فقط</label>
+</div><div class="feedback"></div></div>
+</div>
+<div class="actions"><button class="action primary submit">تصحيح الاختبار</button><button class="action secondary reset">إعادة المحاولة</button></div>
+<div class="result" aria-live="polite"></div>
+</section>
+<p class="note">يمكن فتح الملف مباشرة في المتصفح دون اتصال بالإنترنت. تُعرض نتيجة كل اختبار وتفسير الإجابات بعد الضغط على «تصحيح الاختبار».</p>
+</main>
+<script>
+document.querySelectorAll('.tab').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.target).classList.add('active');
+  });
+});
+document.querySelectorAll('.panel').forEach(panel=>{
+  const submit=panel.querySelector('.submit');
+  const reset=panel.querySelector('.reset');
+  const result=panel.querySelector('.result');
+  const bar=panel.querySelector('.progress span');
+  submit.addEventListener('click',()=>{
+    const qs=[...panel.querySelectorAll('.question')];
+    let score=0,answered=0;
+    qs.forEach(q=>{
+      const chosen=q.querySelector('input:checked');
+      const correct=q.dataset.answer;
+      const fb=q.querySelector('.feedback');
+      q.querySelectorAll('.option').forEach(opt=>opt.classList.remove('correct','wrong'));
+      if(chosen){
+        answered++;
+        const label=chosen.closest('.option');
+        if(chosen.value===correct){score++;label.classList.add('correct');fb.className='feedback show good';fb.textContent='إجابة صحيحة. '+q.dataset.explain;}
+        else{
+          label.classList.add('wrong');
+          q.querySelector('input[value="'+correct+'"]').closest('.option').classList.add('correct');
+          fb.className='feedback show bad';
+          fb.textContent='الإجابة الصحيحة موضحة باللون الأخضر. '+q.dataset.explain;
+        }
+      }else{
+        q.querySelector('input[value="'+correct+'"]').closest('.option').classList.add('correct');
+        fb.className='feedback show bad';
+        fb.textContent='لم يتم اختيار إجابة. '+q.dataset.explain;
+      }
+      q.querySelectorAll('input').forEach(i=>i.disabled=true);
+    });
+    bar.style.width=(answered/qs.length*100)+'%';
+    result.classList.add('show');
+    const percent=Math.round(score/qs.length*100);
+    let msg=percent===100?'ممتاز! إجاباتك كلها صحيحة.':percent>=60?'أحسنت، راجع الملاحظات لتحسين نتيجتك.':'لا بأس، راجع الشرح ثم أعد المحاولة.';
+    result.innerHTML='<strong>نتيجتك: '+score+' من '+qs.length+'</strong><br>النسبة المئوية: '+percent+'%<br>'+msg;
+    submit.disabled=true;
+  });
+  reset.addEventListener('click',()=>{
+    panel.querySelectorAll('input').forEach(i=>{i.checked=false;i.disabled=false;});
+    panel.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','wrong'));
+    panel.querySelectorAll('.feedback').forEach(f=>{f.className='feedback';f.textContent='';});
+    result.classList.remove('show');result.textContent='';
+    bar.style.width='0%';submit.disabled=false;
+  });
+});
+</script>
+</body>
+</html>
